@@ -13,7 +13,7 @@ body{
     padding-right: 15px;
     margin: 0 auto;
 }
-.row::after, .menu::after{
+.row::after, .menu::after, .searchForm::after, .basket::after{
     content: "";
     display: block;
     clear: both;
@@ -66,9 +66,9 @@ body{
     display: none;
     position: absolute;
     top: 75%;
-    left: -0.5%;
+    left: -0.7%;
     z-index: 10;
-    width: 286px;
+    width: 287px;
     background-color: #2c71b8;    
 }
  .dropdown-menu li {
@@ -81,6 +81,9 @@ body{
   /*  width: 100%;*/
     text-align: left;
     padding-left: 30px;
+ }
+ .dropdown-item{
+    background: url("img/down-arrow.png") 98% 50%/24px no-repeat;
  }
  .dropdown-menu a:hover{
     background-color: #fff;
@@ -95,6 +98,7 @@ body{
     border: 1px solid #2c71b8;
     margin-top: 7px;      
 }
+
 .searchInput{
   display: block;
   float: left;
@@ -108,7 +112,7 @@ body{
   padding-left: 15px;
 }
 .searchInput::placeholder{
-    font-size: 21px!;
+    font-size: 21px;
     color: #2c71b8; 
 }
 .searchBtn{
