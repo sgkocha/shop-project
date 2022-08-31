@@ -198,6 +198,24 @@ body {
   font-size: 21px;
   color: #fff;
 }
+
+input[type = "checkbox"] {
+    opacity: 0;
+}
+
+.filter__form label::before {
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  float: left;
+  margin-top: 5px;
+  margin-right: -6px;
+}
+input[type="checkbox"]:checked ~ label::before{
+  background-color: #fff;
+}
 .filter__form a {
   display: block;
   margin-bottom: 30px;
