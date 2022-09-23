@@ -312,9 +312,9 @@ input[type="checkbox"]:checked ~ label::before{
   top: 29%;
   right: 5%;
 }
-.like__image:hover {
+/*.like__image:hover {
   background-color: rgba(44, 113, 184, 0.5);
-}
+}*/
 .product__description {
   border: 1px solid #fff;
   border-top: none;
@@ -365,6 +365,7 @@ input[type="checkbox"]:checked ~ label::before{
 .product__link:hover{
   background-color: lightblue;
   color: #568dc6;
+  cursor: pointer;
 }
 .products__more{
   display: block;
