@@ -24,3 +24,29 @@ for(i = 0; i < likeImgDivs.length; i++) {
         }
     });
 }
+
+let modal = document.querySelector(".modal");
+let moreDetailsBtns = document.querySelectorAll(".product__link");
+let closeBtn = document.querySelector(".btn-close");
+
+function showModal(){
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+}
+function closeModal(){
+    modal.classList.add("hide");
+  modal.classList.remove("show");
+}
+
+moreDetailsBtns.forEach(element => {
+  element.addEventListener("click", showModal)
+});
+
+closeBtn.addEventListener("click",  closeModal);
+
+modal.addEventListener("click", function(e){
+    console.log(e.target);
+ if(e.target === modal) {
+    closeModal();
+ }
+});
