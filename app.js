@@ -44,9 +44,24 @@ moreDetailsBtns.forEach(element => {
 
 closeBtn.addEventListener("click",  closeModal);
 
+let modalBlock = document.querySelector(".modal-block");
+let modalForm = document.querySelector(".modal form");
+
 modal.addEventListener("click", function(e){
-    console.log(e.target);
- if(e.target === modal) {
+ if(e.target === modal || e.target === modalBlock || e.target === modalForm)  {
     closeModal();
  }
+});
+
+document.addEventListener("scroll", function(){
+    let scrollPosition = Math.floor(window.scrollY)
+    console.log(scrollPosition);
+    console.log(document.documentElement.scrollHeight);
+  /*if(scrollPosition === document.documentElement.scrollHeight / 2) {
+    showModal(); 
+  }*/
+});
+
+$('.slider').slick({
+    dots: true,
 });

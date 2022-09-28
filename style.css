@@ -173,18 +173,50 @@ body {
   top: -10%;
   left: -10%;
 }
-.slider {
+.slider-block{
   background-color: #235a93;
   height: 400px;
+  width: 100%;
 }
-.slider__title {
+.slider {
   font-size: 100px;
   font-weight: 100;
   color: #fff;
-  width: 100%;
   line-height: 395px;
   text-align: center;
 }
+.slick-prev,.slick-prev:hover,.slick-prev:focus {
+  left: 10px;
+  background: url("img/left.png");
+}
+
+.slick-next,.slick-next:hover,.slick-next:focus {
+  right: 10px;
+  background: url("img/right.png");
+}
+.slick-prev::before, .slick-next::before{
+  display: none;
+}
+.slick-prev,
+.slick-next {
+  z-index:5;
+}
+
+.slick-dots{
+  bottom: -132px;
+}
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+}
+.slick-dots li button:before {
+  display: none;
+}
+.slick-dots .slick-active button{
+  background: #fff;
+}
+
 .filter__form {
   padding: 22px;
   background-color: #5f93c9;
