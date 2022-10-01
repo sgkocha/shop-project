@@ -377,6 +377,14 @@ input[type="checkbox"]:checked ~ label::before{
 .product__price span {
   vertical-align: super;
 }
+.product-quantity{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.product-quantity input {
+  width: 150px;
+}
 .product__link {
   display: block;
   margin: 15px auto;

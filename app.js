@@ -26,7 +26,7 @@ for(i = 0; i < likeImgDivs.length; i++) {
 }
 
 let modal = document.querySelector(".modal");
-let moreDetailsBtns = document.querySelectorAll(".product__link");
+let moreDetailsBtns = document.querySelectorAll(".more-details");
 let closeBtn = document.querySelector(".btn-close");
 
 function showModal(){
@@ -53,14 +53,45 @@ modal.addEventListener("click", function(e){
  }
 });
 
-document.addEventListener("scroll", function(){
-    let scrollPosition = Math.floor(window.scrollY)
-    console.log(scrollPosition);
-    console.log(document.documentElement.scrollHeight);
-  /*if(scrollPosition === document.documentElement.scrollHeight / 2) {
-    showModal(); 
-  }*/
-});
+
+let incrementBtns = document.querySelectorAll(".increment");
+let decrementBtns = document.querySelectorAll(".decrement");
+let productsQuantity = document.querySelectorAll(".product-quantity input");
+
+function Counter(incrementButton, decrementButton, inputField, minCount = 1, maxCount = 5){
+  this.domRefs = {
+    incrementButton,
+    decrementButton,
+    inputField
+  };
+  
+  this.toggleButtonState = function(){
+    let count = this.domRefs.inputField.value;
+    this.domRefs.decrementButton.disabled = count <= minCount;
+    this.domRefs.incrementButton.disabled = count >= maxCount;
+  };
+  
+  this.toggleButtonState();
+  
+  this.increment = function(){
+    this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+    this.toggleButtonState();
+  };
+  
+  this.decrement = function(){
+    this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
+    this.toggleButtonState();
+  };
+  
+  this.domRefs.incrementButton.addEventListener("click", this.increment.bind(this));
+  this.domRefs.decrementButton.addEventListener("click", this.decrement.bind(this));
+}
+
+let counters = [];
+
+for(let i = 0; i < incrementBtns.length; i++){
+ counters[i] = new Counter(incrementBtns[i], decrementBtns[i], productsQuantity[i]);
+}
 
 $('.slider').slick({
     dots: true,
